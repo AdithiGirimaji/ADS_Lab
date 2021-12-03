@@ -108,13 +108,63 @@ void make_avlTree(node *leaf)
 			    
 			else if(p_b<0 && gp_b>0)
 			{
+				flag1=leaf->parent->parent;
+				flag=leaf->parent;
 				left_rotate(leaf->parent);
-				right_rotate(leaf->parent->parent);
+				leaf->parent=flag1;
+				if(flag1->left==flag)
+				flag1->left=leaf;
+				else
+				flag1->right=leaf;
+				//right_rotate(leaf->parent->parent);
+				e=leaf->parent->parent;
+				if(leaf->parent-parent->parent==NULL){
+				flag=leaf->parent;
+			    right_rotate(leaf->parent->parent);
+			    root=flag;
+			    root->parent=NULL;
+		        }
+		        else
+		        {
+					flag=leaf->parent;
+					flag1=leaf->parent-parent->parent;
+					right_rotate(leaf->parent->parent);
+					flag->parent=flag1;
+					if(flag1->left==e)
+					flag1->left=flag;
+					else
+					flag1->right=flag;
+				}
 			}
 			else if(p_b>0 && gp_b<0)
 			{
+				flag1=leaf->parent->parent;
+				flag=leaf->parent;
 				right_rotate(leaf->parent);
-				left_rotate(leaf->parent->parent);
+				leaf->parent=flag1;
+				if(flag1->left==flag)
+				flag1->left=leaf;
+				else
+				flag1->right=leaf;
+				//left_rotate(leaf->parent->parent);
+				e=leaf->parent->parent;
+				if(leaf->parent-parent->parent==NULL){
+					flag=leaf->parent;
+			        left_rotate(leaf->parent->parent);
+			        root=flag;
+			        root->parent=NULL;
+		            }
+			    else
+			    {
+					flag=leaf->parent;
+					flag1=leaf->parent-parent->parent;
+					left_rotate(leaf->parent->parent);
+					flag->parent=flag1;
+					if(flag1->left==e)
+					flag1->left=flag;
+					else
+					flag1->right=flag;
+				}
 			}
 		}
 		else
