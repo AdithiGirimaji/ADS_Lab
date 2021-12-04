@@ -118,7 +118,7 @@ void make_avlTree(node *leaf)
 				flag1->right=leaf;
 				//right_rotate(leaf->parent->parent);
 				e=leaf->parent->parent;
-				if(leaf->parent-parent->parent==NULL){
+				if(leaf->parent->parent->parent==NULL){
 				flag=leaf->parent;
 			    right_rotate(leaf->parent->parent);
 			    root=flag;
@@ -127,7 +127,7 @@ void make_avlTree(node *leaf)
 		        else
 		        {
 					flag=leaf->parent;
-					flag1=leaf->parent-parent->parent;
+					flag1=leaf->parent->parent->parent;
 					right_rotate(leaf->parent->parent);
 					flag->parent=flag1;
 					if(flag1->left==e)
