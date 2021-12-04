@@ -189,7 +189,10 @@ node *create()
 	
 	//check for avl_tree
 	if(p->parent!=NULL)
+	{
+	if(p->parent->parent!=NULL)    
 	make_avlTree(p);
+	}
 	
 	pa=p;
 	printf("Enter left child of %d:\n",x);
