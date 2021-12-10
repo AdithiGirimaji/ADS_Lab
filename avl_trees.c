@@ -31,6 +31,7 @@ int height(node *n)
 	}
 }
 
+
 void left_rotate(node *e)
 {
 	node *x=e->right;
